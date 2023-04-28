@@ -73,7 +73,7 @@ class netTime:    #Class for Time-Communications with ntp server and the interna
     sec = ntptime.time()  #NTP Server gibt die Zeit in sekunden seit 1/1/1970 0:0:0 an
     timezone_hour = 2     #timezone offset on hours
     timezone_sec = timezone_hour * 3600   #convert offset to seconds
-    sec = (sec + timezone_sec) * 1000L  #add timezone offset to current time
+    sec = (sec + timezone_sec) * 1000  #add timezone offset to current time
     (year, month, day, hours, minutes, seconds, weekday, yearday) = time.localtime(sec//1000)   #Zeit wird in Lesbares Format konvertiert
     self.rtc.datetime((year, month, day, 0, hours, minutes, seconds, 0))    #write the evaluated time to the internal RTC
 
